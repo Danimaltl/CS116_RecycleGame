@@ -161,36 +161,43 @@ public class throwTrash : lerpable
 		checkForGoal(coll.gameObject);
     }
 
-	//  bin collisions
-	public bool checkForGoal(GameObject other){
-	//  checks for if the current trash scored a point and performs the following logic if so.
-	//  returns true on success
-		if (other.tag == gameObject.tag)
-		{
-			difficultySettings.score += 1;
-			difficultySettings.playRecord.Add(gameObject.name.Substring(0, gameObject.name.Length - 7));
-			if (gameObject.tag == "recycle")
-			{
-				difficultySettings.digestionTime_rec = digestionTime;
-			}
+    //  bin collisions
+    public bool checkForGoal(GameObject other) {
+        //  checks for if the current trash scored a point and performs the following logic if so.
+        //  returns true on success
+        if (other.tag != "spawnSpot")
+        {
+            print("GameObject not destroyed");
+         if (other.tag == gameObject.tag)
+            {
+                difficultySettings.score += 1;
+                difficultySettings.playRecord.Add(gameObject.name.Substring(0, gameObject.name.Length - 7));
+                if (gameObject.tag == "recycle")
+                {
+                    difficultySettings.digestionTime_rec = digestionTime;
+                }
 
-			if (gameObject.tag == "composite")
-			{
-				difficultySettings.digestionTime_com = digestionTime;
-			}
-			Destroy(gameObject);
-			return true;
-		} /*
-		else if (other.tag == "landfill" & !difficultySettings.isTutorial)
-		{
-			difficultySettings.landfillCounter++;
-			Destroy(gameObject);
-			return true;
-		} */
-		//  Destroy in all cases, regardless of success
-		difficultySettings.landfillCounter++;
-		Destroy(gameObject); //  added
-		return false;
+                if (gameObject.tag == "composite")
+                {
+                    difficultySettings.digestionTime_com = digestionTime;
+                }
+                Destroy(gameObject);
+                return true;
+            }
+            /*
+            else if (other.tag == "landfill" & !difficultySettings.isTutorial)
+            {
+                difficultySettings.landfillCounter++;
+                Destroy(gameObject);
+                return true;
+            } */
+            //  Destroy in all cases, regardless of success
+            difficultySettings.landfillCounter++;
+            Destroy(gameObject); //  added
+            print("GameObject are destroyed");
+            return false;
+        }
+        return false;
 	}
 
 
