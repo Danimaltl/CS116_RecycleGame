@@ -92,6 +92,9 @@
      <Compile Include="Assets\Script\tutorial\startTutorial.cs" />
      <Compile Include="Assets\Script\tutorial\tutorialSpawn.cs" />
      <Compile Include="Assets\Script\tutorial\tutorialThrow.cs" />
+     <Compile Include="Assets\new_bins_package\scripts\bin_controller.cs" />
+     <Compile Include="Assets\new_bins_package\scripts\blink_open.cs" />
+     <Compile Include="Assets\new_bins_package\scripts\eyesController.cs" />
      <None Include="Assets\Script\grayScale.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -110,6 +113,12 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Common">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
