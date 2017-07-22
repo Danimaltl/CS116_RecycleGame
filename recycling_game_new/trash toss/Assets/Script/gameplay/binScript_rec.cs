@@ -15,6 +15,7 @@ public class binScript_rec : MonoBehaviour
     {
         defaultShader = gameObject.GetComponent<Renderer>().material.shader;
         animationState = gameObject.GetComponent<Animator>();
+        print("Recycle Started" + animationState);
     }
 
     private void Update()
@@ -23,12 +24,13 @@ public class binScript_rec : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().material.shader = grayscale;
             timer += Time.deltaTime;
-            if (timer >= difficultySettings.digestionTime_com)
+            if (timer >= difficultySettings.digestionTime_rec)
             {
                 gameObject.GetComponent<Renderer>().material.shader = defaultShader;
                 animationState.SetInteger("State", 0);
                 gameObject.GetComponent<Collider2D>().enabled = true;
                 isDigesting = false;
+                print("Digesting set to false");
                 timer = 0;
             }
         }
@@ -36,8 +38,11 @@ public class binScript_rec : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "recycle")
+        if (coll.gameObject.tag == "recycle" || coll.gameObject.tag == "Paper" ||
+            coll.gameObject.tag == "Plastic" || coll.gameObject.tag == "Glass" ||
+            coll.gameObject.tag == "Metal")
         {
+            print("Recycling ANim collision detected");
             animationState.SetInteger("State", 1); //switches idle to eating animation
             gameObject.GetComponent<Collider2D>().enabled = false;
             isDigesting = true;

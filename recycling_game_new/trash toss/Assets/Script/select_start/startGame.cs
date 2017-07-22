@@ -77,6 +77,10 @@ public class startGame : MonoBehaviour
 	{
         difficultySettings.barDropRate = difficultySettings.barDropRate * dropRate;
         difficultySettings.barGainRatePlastic = difficultySettings.barGainRatePlastic * dropRate;
+        difficultySettings.barGainRatePaper = difficultySettings.barGainRatePaper * dropRate;
+        difficultySettings.barGainRateMetal = difficultySettings.barGainRateMetal * dropRate;
+        difficultySettings.barGainRateCompost = difficultySettings.barGainRateCompost * dropRate;
+        difficultySettings.barGainRateGlass = difficultySettings.barGainRateGlass * dropRate;
         difficultySettings.spawnGap = difficultySettings.spawnGap * gap;
         difficultySettings.moveSpeed = difficultySettings.moveSpeed * speed;
     }

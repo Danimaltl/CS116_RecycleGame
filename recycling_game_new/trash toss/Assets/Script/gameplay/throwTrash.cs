@@ -12,7 +12,6 @@ public class throwTrash : lerpable
     //DO NOT TOUCH THESE THEY ARE USED FOR BARSCRIPT TO GET THE INFO NECESSARY
     public static bool correctCollision;
     public static GameObject tagHolder;
-    public static int count = 0;
     // You can do whatever to these
     private Vector3 lastMousePosition;
     private Vector3 newMousePosition;
@@ -32,10 +31,6 @@ public class throwTrash : lerpable
     GameObject landfill;
     GameObject recycle;
 
-
-    [SerializeField]
-    //private Image content;
-    int score = difficultySettings.score;
 
     /*
     Animator compostanim;
@@ -58,7 +53,7 @@ public class throwTrash : lerpable
 		landfill = GameObject.Find("landfill bin");
         //landfillanim = landfill.GetComponent<Animator> ();
 
-        recycle = GameObject.Find("Recycle Bin");
+        recycle = GameObject.Find("recycle bin");
         //recyclePla = GameObject.Find("Plastic Bin");
         //recycleG = GameObject.Find("Glass Bin");
         //recyclePap = GameObject.Find("Paper Bin");
@@ -155,7 +150,6 @@ public class throwTrash : lerpable
 
         moveBySwipe = true;
         startCounting = true;
-        count = 0;
     }
 
 
@@ -185,9 +179,10 @@ public class throwTrash : lerpable
         //  checks for if the current trash scored a point and performs the following logic if so.
         //  returns true on success
         correctCollision = false;
-        print(count + " first check");
         print(difficultySettings.score + " SCORE");
+        // set temp here in case its not a recycle items so it doesn't complain
         temp = gameObject;
+        //otherwise its recycle and create a temp to store tag
         if (gameObject.tag == "Plastic" || gameObject.tag == "Paper" || 
             gameObject.tag == "Metal" || gameObject.tag == "Glass")
         {
@@ -199,7 +194,6 @@ public class throwTrash : lerpable
         }
 		if (other.tag == gameObject.tag)
 		{
-            count++;
             difficultySettings.score += 1;
 			difficultySettings.playRecord.Add(gameObject.name.Substring(0, gameObject.name.Length - 7));
              if (gameObject.tag == "composite")
@@ -215,12 +209,7 @@ public class throwTrash : lerpable
 		}
         else if(other.tag == temp.tag)
         {
-            print(count + " second check");
-            count++;
-            if (count <= 1)
-            {
-                difficultySettings.score += 1;
-            }
+            difficultySettings.score += 1;
             difficultySettings.playRecord.Add(gameObject.name.Substring(0, gameObject.name.Length - 7));
             if (gameObject.tag == "recycle" || temp.tag == "recycle")
             {
@@ -231,6 +220,7 @@ public class throwTrash : lerpable
             }
             print(difficultySettings.score);
             Destroy(gameObject);
+            Destroy(temp);
             return true;
         }
             
