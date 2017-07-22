@@ -56,7 +56,14 @@ public class throwTrash : lerpable
 		if (isLerping ()) {
 			//  Do nothing in terms of physics.
 			//  Let the lerp handle it.
-
+			if (!matchesBin (throwingTarget)) {
+				//  Uh oh! The finger has realeased the trash and it's going to the wrong bin!
+				//  Make the bin wince
+				throwingTarget.GetComponent<bin_controller> ().anticipatingBad = true;
+			} else {
+				//  make the bin excited to get a good trash
+				throwingTarget.GetComponent<bin_controller> ().anticipatingBad = false;
+			}
 		} else if (moveBySwipe) {
 			//  The buffer is the drag distance that is tolerated before anything happens
 			float distanceBuffer = 0.2f;
@@ -163,11 +170,15 @@ public class throwTrash : lerpable
 		checkForGoal(coll.gameObject);
     }
 
+	public bool matchesBin(GameObject bin){
+		return bin.tag == gameObject.tag;
+	}
+
 	//  bin collisions
 	public bool checkForGoal(GameObject other){
 	//  checks for if the current trash scored a point and performs the following logic if so.
 	//  returns true on success
-		if (other.tag == gameObject.tag) {
+		if (matchesBin(other)) {
 			difficultySettings.score += 1;
 			difficultySettings.playRecord.Add (gameObject.name.Substring (0, gameObject.name.Length - 7));
 			if (gameObject.tag == "recycle") {

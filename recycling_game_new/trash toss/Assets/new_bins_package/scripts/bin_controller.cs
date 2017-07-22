@@ -7,23 +7,40 @@ public class bin_controller : MonoBehaviour {
 	//  Without interfering with mechanics
 	private const float DEFAULT_LID_POSITION = 0.675f;
 
+	public float normalizedBreath = 1f;
 	private float currentMood = 10f;
 	private float lidPosition = 1f;
 	private float lidSpeed = 0f;
 
 	private bool isTouchingBadTrash = false;
+	public bool anticipatingBad = false;
+	public bool anticipatingGood = false;
+	private float startedBreathing;
 
 
 
 	// Use this for initialization
 	void Start () {
-		
+		startedBreathing = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//  Make sure the mood is a legal mood, to be safe
 		currentMood = capMood (currentMood);
+
+		//  keep breathing 
+		float breathGoal = Mathf.Sin(Time.time - startedBreathing);//*.5f + 1.25f;
+		float breathSpeed = 0.01f;
+		if (normalizedBreath > breathGoal) {
+			normalizedBreath -= breathSpeed;
+		} else {
+			normalizedBreath += breathSpeed;
+		}
+		//  Move the upper body up and down with the breath
+		this.gameObject.transform.GetChild (0).transform.position = new Vector3(this.gameObject.transform.GetChild (0).transform.position.x, 
+																				-normalizedBreath/4  -0.925f, 
+																				this.gameObject.transform.GetChild (0).transform.position.z);
 
 		//  Random mood swings (for testing)
 		int testFrequency = 200; //  bigger number = fewer blinks
@@ -51,6 +68,15 @@ public class bin_controller : MonoBehaviour {
 		lidSpeed += lidAccel; //  Add acceleration to speed
 		lidSpeed = lidSpeed * .93f; //  Friction
 		lidPosition =  Mathf.Max(0f, Mathf.Min(1f, lidSpeed + lidPosition)); //  add speed to position
+
+		if (anticipatingBad) {
+			lidPosition = 0;
+			normalizedBreath = 1f;
+		} else if (anticipatingGood) {
+			normalizedBreath = 0f;
+		}
+		anticipatingBad = false;
+		anticipatingGood = false;
 	}
 
 	private void controlVisibility(){
@@ -61,6 +87,7 @@ public class bin_controller : MonoBehaviour {
 			this.gameObject.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().enabled = false;
 			//  Turn on the special squished sprite
 			this.gameObject.transform.GetChild(1).GetComponent<Renderer>().enabled = true;
+			normalizedBreath = 1f;
 		} else {
 			//  Turn on normal body
 			GetComponent<Renderer>().enabled = true;
@@ -69,7 +96,7 @@ public class bin_controller : MonoBehaviour {
 			//  turn off squished sprite
 			this.gameObject.transform.GetChild(1).GetComponent<Renderer>().enabled = false;
 		}
-		//  Now reset the variable after reading
+		//  Now reset the variable after reading every step
 		isTouchingBadTrash = false;
 	}
 
@@ -100,6 +127,7 @@ public class bin_controller : MonoBehaviour {
 		//  Animate the bin as if this was the right bin to throw trash into.
 		setLid(1f); //  open lid completely
 		setMood(capMood(currentMood +1f)); //  Increase the mood
+		normalizedBreath = 0f;
 	}
 	public void animateIncorrect(){
 		setLid(0f);
@@ -107,6 +135,7 @@ public class bin_controller : MonoBehaviour {
 		//  Animate the bin as if a the wrong trash was just thrown in
 		//  but don't mess with the game score. Aesthetic only
 		setMood(capMood(currentMood -1f)); //  Decrease the mood
+		//normalizedBreath = 1f;
 
 	}
 }
