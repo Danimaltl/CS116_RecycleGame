@@ -19,7 +19,7 @@ public class binScript_com : MonoBehaviour
     {
         if (isDigesting == true)
         {
-            gameObject.GetComponent<Renderer>().material.shader = grayscale;
+            //gameObject.GetComponent<Renderer>().material.shader = grayscale;
             timer += Time.deltaTime;
             if (timer >= difficultySettings.digestionTime_com)
             {

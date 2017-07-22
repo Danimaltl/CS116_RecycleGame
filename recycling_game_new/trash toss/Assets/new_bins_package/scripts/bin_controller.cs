@@ -12,11 +12,12 @@ public class bin_controller : MonoBehaviour {
 	public float headOffset = 0.64f; 
 
 	public float normalizedBreath = 1f;
-	private float currentMood = 10f;
+	private float currentMood = 8f;
 	private float lidPosition = 1f;
 	private float lidSpeed = 0f;
 
-	private bool isTouchingBadTrash = false;
+	public int flinchlength = 10;
+	private int badTrashTimer = -1;
 	public bool anticipatingBad = false;
 	public bool anticipatingGood = false;
 	private float startedBreathing;
@@ -30,6 +31,8 @@ public class bin_controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//  This counter always runs down
+		badTrashTimer -= 1;
 		//  Make sure the mood is a legal mood, to be safe
 		currentMood = capMood (currentMood);
 
@@ -89,8 +92,8 @@ public class bin_controller : MonoBehaviour {
 	}
 
 	private void controlVisibility(){
-		if (isTouchingBadTrash) {
-			//  Turn on normal body
+		if (badTrashTimer > 0) {
+			//  Turn off normal body
 			GetComponent<Renderer>().enabled = false;
 			this.gameObject.transform.GetChild(0).GetComponent<Renderer>().enabled = false;
 			this.gameObject.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().enabled = false;
@@ -106,7 +109,7 @@ public class bin_controller : MonoBehaviour {
 			this.gameObject.transform.GetChild(1).GetComponent<Renderer>().enabled = false;
 		}
 		//  Now reset the variable after reading every step
-		isTouchingBadTrash = false;
+		//isTouchingBadTrash = false;
 	}
 
 	public int capMood( float rawMood ){
@@ -140,7 +143,7 @@ public class bin_controller : MonoBehaviour {
 	}
 	public void animateIncorrect(){
 		setLid(0f);
-		isTouchingBadTrash = true;
+		badTrashTimer = flinchlength; //  flinch from bad trash for #flinchlength cycles
 		//  Animate the bin as if a the wrong trash was just thrown in
 		//  but don't mess with the game score. Aesthetic only
 		setMood(capMood(currentMood -1f)); //  Decrease the mood
