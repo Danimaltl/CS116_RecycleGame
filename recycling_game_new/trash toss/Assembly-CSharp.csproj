@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EmptyClass.cs" />
      <Compile Include="Assets\Script\Pollution_Bar_Script.cs" />
      <Compile Include="Assets\Script\animationStart.cs" />
      <Compile Include="Assets\Script\difficultySettings.cs" />
@@ -92,6 +93,7 @@
      <Compile Include="Assets\Script\tutorial\startTutorial.cs" />
      <Compile Include="Assets\Script\tutorial\tutorialSpawn.cs" />
      <Compile Include="Assets\Script\tutorial\tutorialThrow.cs" />
+     <Compile Include="Assets\lid_behavior.cs" />
      <Compile Include="Assets\new_bins_package\scripts\bin_controller.cs" />
      <Compile Include="Assets\new_bins_package\scripts\blink_open.cs" />
      <Compile Include="Assets\new_bins_package\scripts\eyesController.cs" />

@@ -167,32 +167,26 @@ public class throwTrash : lerpable
 	public bool checkForGoal(GameObject other){
 	//  checks for if the current trash scored a point and performs the following logic if so.
 	//  returns true on success
-		if (other.tag == gameObject.tag)
-		{
+		if (other.tag == gameObject.tag) {
 			difficultySettings.score += 1;
-			difficultySettings.playRecord.Add(gameObject.name.Substring(0, gameObject.name.Length - 7));
-			if (gameObject.tag == "recycle")
-			{
+			difficultySettings.playRecord.Add (gameObject.name.Substring (0, gameObject.name.Length - 7));
+			if (gameObject.tag == "recycle") {
 				difficultySettings.digestionTime_rec = digestionTime;
 			}
-
-			if (gameObject.tag == "composite")
-			{
+			if (gameObject.tag == "composite") {
 				difficultySettings.digestionTime_com = digestionTime;
 			}
-			Destroy(gameObject);
+			Destroy (gameObject);
+			other.GetComponent<bin_controller> ().animateCorrect ();
 			return true;
-		} /*
-		else if (other.tag == "landfill" & !difficultySettings.isTutorial)
-		{
+		} else {
+			//  Increment penalty
 			difficultySettings.landfillCounter++;
-			Destroy(gameObject);
-			return true;
-		} */
-		//  Destroy in all cases, regardless of success
-		difficultySettings.landfillCounter++;
-		Destroy(gameObject); //  added
-		return false;
+			//  Destroy in all cases, regardless of success
+			Destroy (gameObject); //  added
+			other.GetComponent<bin_controller> ().animateIncorrect ();
+			return false;
+		}
 	}
 
 

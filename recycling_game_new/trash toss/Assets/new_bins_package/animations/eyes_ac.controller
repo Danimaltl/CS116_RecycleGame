@@ -12,8 +12,8 @@ AnimatorController:
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -63,7 +63,7 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0
-  m_TransitionOffset: 0.0031223681
+  m_TransitionOffset: 0
   m_ExitTime: 0.2
   m_HasExitTime: 1
   m_HasFixedDuration: 0
@@ -101,7 +101,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: cbin_blink
-  m_Speed: 1
+  m_Speed: 0.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101160811071236766}
@@ -114,7 +114,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 46ce0dfff3dfc9248b32ad9a4220407e, type: 2}
+  m_Motion: {fileID: 7400000, guid: 785007d37b711c045a7226fc14d745b5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -126,7 +126,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: cbin_mood
-  m_Speed: -2
+  m_Speed: 0
   m_CycleOffset: 1
   m_Transitions:
   - {fileID: 1101908667938700302}
