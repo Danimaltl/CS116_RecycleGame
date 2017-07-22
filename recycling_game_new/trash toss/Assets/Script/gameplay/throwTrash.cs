@@ -38,7 +38,7 @@ public class throwTrash : lerpable
         startCounting = false; //  countdown til automatated item destruction when true
         time = 0; //  presumably the time passed since the counter was activated
         //starts idle animations
-        compost = GameObject.Find("composite bin");
+		compost = GameObject.Find("compost bin");
         //compostanim = compost.GetComponent<Animator> ();
 
 		landfill = GameObject.Find("landfill bin");
@@ -52,8 +52,10 @@ public class throwTrash : lerpable
     public override void Update()
     {
 		base.Update();
-	//  This is the shared update cycle of all throwable trash objects
+		//  This is the shared update cycle of all throwable trash objects
 		if (isLerping ()) {
+			throwingTarget.GetComponent<bin_controller> ().anticipatingBad = false;
+			throwingTarget.GetComponent<bin_controller> ().anticipatingGood = false;
 			//  Do nothing in terms of physics.
 			//  Let the lerp handle it.
 			if (!matchesBin (throwingTarget)) {
@@ -62,7 +64,7 @@ public class throwTrash : lerpable
 				throwingTarget.GetComponent<bin_controller> ().anticipatingBad = true;
 			} else {
 				//  make the bin excited to get a good trash
-				throwingTarget.GetComponent<bin_controller> ().anticipatingBad = false;
+				throwingTarget.GetComponent<bin_controller> ().anticipatingGood = true;
 			}
 		} else if (moveBySwipe) {
 			//  The buffer is the drag distance that is tolerated before anything happens

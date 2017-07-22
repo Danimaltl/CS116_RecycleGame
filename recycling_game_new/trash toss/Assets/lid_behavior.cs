@@ -14,7 +14,9 @@ public class lid_behavior : StateMachineBehaviour {
 		//  Get the bin puppeteer first,
 		bin_controller bin = animator.gameObject.transform.root.GetComponent<bin_controller> ();
 		//  Then set the frame to the bin's lid variable (0-1)
-		animator.Play (stateInfo.fullPathHash, -1, bin.getLid());
+		animator.Play (
+			stateInfo.fullPathHash, 
+			-1, bin.getLid());
 	}
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state

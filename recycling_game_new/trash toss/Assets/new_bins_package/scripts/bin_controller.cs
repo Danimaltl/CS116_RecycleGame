@@ -5,7 +5,11 @@ using UnityEngine;
 public class bin_controller : MonoBehaviour {
 	//  This class control the visual logic of the bin
 	//  Without interfering with mechanics
-	private const float DEFAULT_LID_POSITION = 0.675f;
+	private const float READY_LID_POSITION = 0.675f;
+	private const float DEFAULT_LID_POSITION = 0f;
+
+	//public float headOffset = 0.925f; 
+	public float headOffset = 0.64f; 
 
 	public float normalizedBreath = 1f;
 	private float currentMood = 10f;
@@ -39,9 +43,9 @@ public class bin_controller : MonoBehaviour {
 		}
 		//  Move the upper body up and down with the breath
 		this.gameObject.transform.GetChild (0).transform.position = new Vector3(this.gameObject.transform.GetChild (0).transform.position.x, 
-																				-normalizedBreath/4  -0.925f, 
-																				this.gameObject.transform.GetChild (0).transform.position.z);
-
+																				-normalizedBreath/4  -headOffset, 
+																				-1);
+		/*
 		//  Random mood swings (for testing)
 		int testFrequency = 200; //  bigger number = fewer blinks
 		if (Random.Range(0, testFrequency) <= 1) {
@@ -50,19 +54,23 @@ public class bin_controller : MonoBehaviour {
 		if (Random.Range(0, testFrequency) <= 1) {
 			animateIncorrect();
 		}
-
+		*/
 		//  Make some objects invisible
 		controlVisibility ();
 
 		//  Swing lid back towards the default position
 		float lidAccel = 0;
 		float accelerationMagnitude = 0.01f;
+		float targetLidPos = DEFAULT_LID_POSITION;
+		if (anticipatingGood) {
+			targetLidPos = READY_LID_POSITION;
+		}
 		//  Determine lid accel direction
-		if (lidPosition > DEFAULT_LID_POSITION) {
+		if (lidPosition > targetLidPos) {
 			//  Less force closing because shorter distance. 
 			lidAccel = -accelerationMagnitude/4;
 		}
-		if (lidPosition < DEFAULT_LID_POSITION) {
+		if (lidPosition < targetLidPos) {
 			lidAccel = accelerationMagnitude;
 		}
 		lidSpeed += lidAccel; //  Add acceleration to speed
@@ -71,10 +79,11 @@ public class bin_controller : MonoBehaviour {
 
 		if (anticipatingBad) {
 			lidPosition = 0;
-			normalizedBreath = 1f;
-		} else if (anticipatingGood) {
-			normalizedBreath = 0f;
-		}
+			//normalizedBreath = 1f;
+		}// else if (anticipatingGood) {
+			//lidPosition = READY_LID_POSITION;
+			//normalizedBreath = 0f;
+		//}
 		anticipatingBad = false;
 		anticipatingGood = false;
 	}
