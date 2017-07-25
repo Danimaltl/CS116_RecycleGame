@@ -138,7 +138,6 @@ public class bin_controller : MonoBehaviour {
 		badTrashTimer = -1;
 	}
 	public void animateIncorrect(){
-		setLid(0f);
 		badTrashTimer = flinchlength; //  flinch from bad trash for #flinchlength cycles
 		//  Animate the bin as if a the wrong trash was just thrown in
 		//  but don't mess with the game score. Aesthetic only
