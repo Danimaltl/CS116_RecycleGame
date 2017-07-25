@@ -175,7 +175,7 @@ public class throwTrash : lerpable
 	}
 
 	public bool matchesBin(GameObject bin){
-		return bin.tag == gameObject.tag || isRecyclable(this.gameObject) && bin.tag == "recycle";
+        return bin.tag == gameObject.tag || isRecyclable(this.gameObject) && bin.tag == "recycle";
 	}
 
 	public bool isRecyclable( GameObject trashObject){
@@ -216,13 +216,24 @@ public class throwTrash : lerpable
                 }
                 correctCollision = true;
             }
+            else if (gameObject.tag == "recycle" || temp.tag == "recycle")
+            {
+                difficultySettings.digestionTime_rec = digestionTime;
+                if (!difficultySettings.isTutorial)
+                {
+                    tagHolder = (GameObject)Instantiate(gameObject);
+                }
+                //tagHolder = gameObject;
+                correctCollision = true;
+            }
             Destroy(gameObject);
+            Destroy(temp);
             print(gameObject);
             print(difficultySettings.score);
             other.GetComponent<bin_controller>().animateCorrect();
             return true;
         }
-        else if (other.tag == temp.tag)
+       /* else if (other.tag == temp.tag)
         {
             print(difficultySettings.score);
             difficultySettings.score += 1;
@@ -243,7 +254,7 @@ public class throwTrash : lerpable
             print(other.GetComponent<bin_controller>());
             other.GetComponent<bin_controller>().animateCorrect();
             return true;
-        }
+        }*/
 
         else
         {
