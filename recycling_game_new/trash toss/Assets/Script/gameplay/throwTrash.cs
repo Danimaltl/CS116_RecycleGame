@@ -247,6 +247,7 @@ public class throwTrash : lerpable
             difficultySettings.landfillCounter++;
             //  Destroy in all cases, regardless of success
             Destroy(gameObject); //  added
+            Destroy(temp);
             other.GetComponent<bin_controller>().animateIncorrect();
             return false;
         }
