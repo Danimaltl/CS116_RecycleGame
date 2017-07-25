@@ -39,7 +39,8 @@ public class binScript_com : MonoBehaviour
 		if (coll.gameObject.tag == this.gameObject.tag)
         {
             //animationState.SetInteger("State", 1); //switches idle to eating animation
-            gameObject.GetComponent<Collider2D>().enabled = false;
+			//  If a trash object has the same tag as the bin, allow collision to happen
+            //gameObject.GetComponent<Collider2D>().enabled = false;
             isDigesting = true;
         }
     }

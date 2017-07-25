@@ -49,16 +49,7 @@ public class bin_controller : MonoBehaviour {
 		this.gameObject.transform.GetChild (0).transform.position = new Vector3(this.gameObject.transform.root.transform.position.x, 
 																				-normalizedBreath/4  -headOffset + this.gameObject.transform.root.transform.position.y, 
 																				-1);
-		/*
-		//  Random mood swings (for testing)
-		int testFrequency = 200; //  bigger number = fewer blinks
-		if (Random.Range(0, testFrequency) <= 1) {
-			animateCorrect();
-		}
-		if (Random.Range(0, testFrequency) <= 1) {
-			animateIncorrect();
-		}
-		*/
+
 		//  Make some objects invisible
 		controlVisibility ();
 
@@ -139,9 +130,12 @@ public class bin_controller : MonoBehaviour {
 	//  The animate functions don't change scoring logic.
 	public void animateCorrect(){
 		//  Animate the bin as if this was the right bin to throw trash into.
-		//setLid(0f); //  open lid completely
+		//  open lid completely
+		lidPosition = 1f;
 		setMood(capMood(currentMood +1f)); //  Increase the mood
 		normalizedBreath = 0f;
+		//  And prevent the bin from glitch-flinching
+		badTrashTimer = -1;
 	}
 	public void animateIncorrect(){
 		setLid(0f);
