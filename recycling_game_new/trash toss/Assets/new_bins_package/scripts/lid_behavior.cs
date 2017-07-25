@@ -13,7 +13,7 @@ public class lid_behavior : StateMachineBehaviour {
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		//  Get the bin puppeteer first,
 		bin_controller bin = animator.gameObject.transform.root.GetComponent<bin_controller> ();
-		Debug.Log ("Get Lid: " + bin.getLid());
+		//Debug.Log ("Get Lid: " + bin.getLid());
 		//  Then set the frame to the bin's lid variable (0-1)
 		animator.Play (
 			stateInfo.fullPathHash, 

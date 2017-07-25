@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114442714193878124}
   m_Layer: 0
   m_Name: ketchup
-  m_TagString: recycle
+  m_TagString: Plastic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 2
+  score: 51
 --- !u!114 &114442714193878124
 MonoBehaviour:
   m_ObjectHideFlags: 1

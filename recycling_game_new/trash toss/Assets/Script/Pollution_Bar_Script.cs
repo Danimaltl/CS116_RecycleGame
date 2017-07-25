@@ -19,8 +19,8 @@ public class Pollution_Bar_Script : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		landfillCount = difficultySettings.landfillCounter;
-		print ("counter: " + landfillCount);
+		//print ("counter: " + landfillCount);
 		content.fillAmount = (float) (((float)landfillCount) / limit);
-		print ("fillAmount: " + content.fillAmount);
+		//print ("fillAmount: " + content.fillAmount);
 	}
 }

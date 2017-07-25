@@ -10,7 +10,11 @@ public class difficultySettings : MonoBehaviour {
     public static bool isTutorial;
     public static int score; // lives/pollution bar
     public static int landfillCounter;
-    public static float barGainRate;
+    public static float barGainRatePlastic;
+    public static float barGainRateMetal;
+    public static float barGainRateGlass;
+    public static float barGainRatePaper;
+    public static float barGainRateCompost;
     public static float barDropRate;
     public static float moveSpeed;
     public static int levelGoal;
@@ -36,9 +40,12 @@ public class difficultySettings : MonoBehaviour {
 		failedRecord = new List<string> ();
         //setDifficulty(10, 1, .01f, .05f, 10);
         secondStar.DestroyedCount = 0;
-        print("game start: level goal: " + levelGoal + "    gainRate: " + barGainRate + "    dropRate" + barDropRate
-            + "    speed: " + moveSpeed + "    limit: " + landfillLimit);
-	}
+        print("game start: level goal: " + levelGoal + "    gainRateGlass: " + barGainRateGlass +
+     "    gainRatePlastic: " + barGainRatePlastic + "    gainRateMetal: " + barGainRateMetal +
+     "    gainRateCompost: " + barGainRateCompost + "    gainRatePaper: " + barGainRatePaper +
+     "    dropRate" + barDropRate
+     + "    speed: " + moveSpeed + "    limit: " + landfillLimit);
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -49,6 +56,7 @@ public class difficultySettings : MonoBehaviour {
 
 
         //level goal
+        //print(score);
         if (score == levelGoal)
             isCompleted = true;
 
@@ -58,10 +66,11 @@ public class difficultySettings : MonoBehaviour {
             gameOvered = true;
 	}
 
-    public void setDifficulty(int goal, float gain, float drop, float speed, int limit, float gap)
-    {
+    public void setDifficulty(int goal, float gainGla, float gainPla, float gainMet, float gainPaper, float gainComp,
+    float drop, float speed, int limit, float gap)
+    { 
         setGoal(goal);
-        setGainRate(gain);
+        setGainRate(gainGla, gainPla, gainMet, gainPaper, gainComp);
         setDropRate(drop);
         setSpeed(speed);
         setLimit(limit);
@@ -69,7 +78,11 @@ public class difficultySettings : MonoBehaviour {
     }
 
     private void setGoal(int goal) { levelGoal = goal; }
-    private void setGainRate(float rate) { barGainRate = rate; }
+    private void setGainRate(float rateGlass, float ratePlastic, float rateMetal, float ratePaper, float rateCompost)
+    {
+        barGainRateGlass = rateGlass; barGainRatePlastic = ratePlastic; barGainRateMetal = rateMetal;
+        barGainRatePaper = ratePaper; barGainRateCompost = rateCompost;
+    }
     private void setDropRate(float rate) { barDropRate = rate; }
     private void setSpeed(float speed) { moveSpeed = speed; }
     private void setLimit(int limit) { landfillLimit = limit; }

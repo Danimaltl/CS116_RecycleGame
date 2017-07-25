@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114171718426866908}
   m_Layer: 0
   m_Name: glass
-  m_TagString: recycle
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 4
+  score: 51
 --- !u!212 &212559683272286510
 SpriteRenderer:
   m_ObjectHideFlags: 1

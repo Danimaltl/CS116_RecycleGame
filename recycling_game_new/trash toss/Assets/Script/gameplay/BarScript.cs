@@ -8,25 +8,31 @@ public class BarScript :MonoBehaviour {
 
 
 
-	[SerializeField]
+    [SerializeField]
 	private Image content;
 	int score = difficultySettings.score;
 
 	// Use this for initialization
 	void Start () {
 		content.fillAmount = 1f;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-		if(difficultySettings.isStarted & !difficultySettings.isCompleted)
+        if (difficultySettings.isStarted & !difficultySettings.isCompleted)
         {
-			content.fillAmount -= Time.deltaTime * difficultySettings.barDropRate;
+            content.fillAmount -= Time.deltaTime* difficultySettings.barDropRate;
 			if (score != difficultySettings.score)
             {
-				content.fillAmount = content.fillAmount + difficultySettings.barGainRate;
-				score = difficultySettings.score;
+                if (throwTrash.correctCollision == true)
+                {
+                    //print(" IT WORKED YOUR TAG IS: " + throwTrash.tagHolder.tag);
+                    barFill(throwTrash.tagHolder.tag);
+                    Destroy(throwTrash.tagHolder);
+                }
+                //content.fillAmount = content.fillAmount + difficultySettings.barGainRatePlastic;
+				//score = difficultySettings.score;
 			}
 			if (ActivePower.greenAdd)
             {
@@ -40,4 +46,34 @@ public class BarScript :MonoBehaviour {
             }
 		}
     }
+
+    public void barFill(string tag)
+{
+    content.fillAmount -= Time.deltaTime * difficultySettings.barDropRate;
+    switch (tag)
+    {
+        case "Plastic":
+            content.fillAmount = content.fillAmount + difficultySettings.barGainRatePlastic;
+            score = difficultySettings.score;
+            break;
+        case "Glass":
+            content.fillAmount = content.fillAmount + difficultySettings.barGainRateGlass;
+            score = difficultySettings.score;
+            break;
+        case "Metal":
+            content.fillAmount = content.fillAmount + difficultySettings.barGainRateMetal;
+            score = difficultySettings.score;
+            break;
+        case "Paper":
+            content.fillAmount = content.fillAmount + difficultySettings.barGainRatePaper;
+            score = difficultySettings.score;
+            break;
+        case "composite":
+            content.fillAmount = content.fillAmount + difficultySettings.barGainRateCompost;
+            score = difficultySettings.score;
+            break;
+        default:
+            break;
+    }
+}
 }

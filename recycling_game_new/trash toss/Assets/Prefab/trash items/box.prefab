@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114609718189470248}
   m_Layer: 0
   m_Name: box
-  m_TagString: recycle
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1.5
+  score: 51
 --- !u!212 &212620150851724284
 SpriteRenderer:
   m_ObjectHideFlags: 1

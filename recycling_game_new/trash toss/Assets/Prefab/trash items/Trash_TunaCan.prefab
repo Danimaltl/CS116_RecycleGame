@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114719546709419888}
   m_Layer: 0
   m_Name: Trash_TunaCan
-  m_TagString: recycle
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114719546709419888
 MonoBehaviour:
   m_ObjectHideFlags: 1

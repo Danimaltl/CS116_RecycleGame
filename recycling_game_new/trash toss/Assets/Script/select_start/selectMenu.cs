@@ -25,7 +25,9 @@ public class selectMenu : MonoBehaviour {
 	{
         difficultySettings.levelCounter = 1;
         difficultySettings.levelGoal = 5;
-		settings.setDifficulty(5, .05f, .03f, .02f, 10, 2f);
-		levelManager.LoadPlayScene();
+        //int goal, float gainGla, float gainPla, float gainMet, float gainPaper, float gainComp,
+        //float drop, float speed, int limit, float gap
+        settings.setDifficulty(5, .05f, .1f, .15f, .05f, .02f, .03f, .02f, 10, 2f);
+        levelManager.LoadPlayScene();
 	}
 }

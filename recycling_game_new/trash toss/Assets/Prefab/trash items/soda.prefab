@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114747888770627322}
   m_Layer: 0
   m_Name: soda
-  m_TagString: recycle
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114747888770627322
 MonoBehaviour:
   m_ObjectHideFlags: 1

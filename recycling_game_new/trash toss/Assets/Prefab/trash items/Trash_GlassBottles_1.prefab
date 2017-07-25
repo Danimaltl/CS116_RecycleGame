@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114304777488254024}
   m_Layer: 0
   m_Name: Trash_GlassBottles_1
-  m_TagString: recycle
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 4
+  score: 51
 --- !u!114 &114304777488254024
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114005855248127924}
   m_Layer: 0
   m_Name: Trash_SodaCans_2
-  m_TagString: recycle
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 114738436989182174}
   m_Layer: 0
   m_Name: envelope
-  m_TagString: recycle
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 114268089542517018}
   m_Layer: 0
   m_Name: soda
-  m_TagString: recycle
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 114797462373094724}
   m_Layer: 0
   m_Name: glass
-  m_TagString: recycle
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 114360421924723854}
   m_Layer: 0
   m_Name: Trash_GlassBottles
-  m_TagString: recycle
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 114271350223976512}
   m_Layer: 0
   m_Name: milk
-  m_TagString: recycle
+  m_TagString: Plastic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 114523761206453410}
   m_Layer: 0
   m_Name: box
-  m_TagString: recycle
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 114100431582520696}
   m_Layer: 0
   m_Name: newspaper
-  m_TagString: recycle
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 114400723198048388}
   m_Layer: 0
   m_Name: Febreze
-  m_TagString: recycle
+  m_TagString: Plastic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 114403092699441586}
   m_Layer: 0
   m_Name: Trash_TunaCan
-  m_TagString: recycle
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 114857405355784834}
   m_Layer: 0
   m_Name: Trash_BubbleWrap
-  m_TagString: recycle
+  m_TagString: Plastic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 114488592881760258}
   m_Layer: 0
   m_Name: Trash_SodaCans_1
-  m_TagString: recycle
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 114876139819893682}
   m_Layer: 0
   m_Name: bottle
-  m_TagString: recycle
+  m_TagString: Plastic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 114920959310675150}
   m_Layer: 0
   m_Name: Trash_GlassBottles_2
-  m_TagString: recycle
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 114213871014185864}
   m_Layer: 0
   m_Name: ketchup
-  m_TagString: recycle
+  m_TagString: Plastic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -936,7 +936,7 @@ GameObject:
   - component: {fileID: 114309699673211926}
   m_Layer: 0
   m_Name: Paper
-  m_TagString: recycle
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3110,6 +3110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 3
+  score: 51
 --- !u!114 &114005855248127924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3145,6 +3146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 2
+  score: 51
 --- !u!114 &114043895499108916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3158,6 +3160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 3
+  score: 51
 --- !u!114 &114045236398511324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3171,6 +3174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 4
+  score: 51
 --- !u!114 &114047262118934768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3184,6 +3188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 4
+  score: 51
 --- !u!114 &114058304355517800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3197,6 +3202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114063368415767332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3232,6 +3238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1
+  score: 51
 --- !u!114 &114089963440649324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3245,6 +3252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1.5
+  score: 51
 --- !u!114 &114091269687617006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3258,6 +3266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1.5
+  score: 51
 --- !u!114 &114100431582520696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3282,6 +3291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114109146545485672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3339,6 +3349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 2
+  score: 51
 --- !u!114 &114179519325027160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3363,6 +3374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1
+  score: 51
 --- !u!114 &114205476938092962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3376,6 +3388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114213871014185864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3411,6 +3424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 2
+  score: 51
 --- !u!114 &114268089542517018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3468,6 +3482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1.5
+  score: 51
 --- !u!114 &114360421924723854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3492,6 +3507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114385385334904212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3516,6 +3532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1.5
+  score: 51
 --- !u!114 &114400723198048388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3551,6 +3568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 2
+  score: 51
 --- !u!114 &114432805360967792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3564,6 +3582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114449260870229554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3577,6 +3596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1
+  score: 51
 --- !u!114 &114450628314517706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3601,6 +3621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114482017811639788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3636,6 +3657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 3
+  score: 51
 --- !u!114 &114499588414463276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3649,6 +3671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1.5
+  score: 51
 --- !u!114 &114515025766082980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3662,6 +3685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114523761206453410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3697,6 +3721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1
+  score: 51
 --- !u!114 &114539225189709884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3710,6 +3735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114547269854606414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3734,6 +3760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114584608707036364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3747,6 +3774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114637227920362946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3760,6 +3788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114660771980961066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3773,6 +3802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 4
+  score: 51
 --- !u!114 &114678069860773572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3786,6 +3816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1
+  score: 51
 --- !u!114 &114689318413143824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3799,6 +3830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 4
+  score: 51
 --- !u!114 &114700764974968794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3834,6 +3866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 2
+  score: 51
 --- !u!114 &114735710369555822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3847,6 +3880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 1
+  score: 51
 --- !u!114 &114738436989182174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3904,6 +3938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114857405355784834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3961,6 +3996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114920959310675150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3985,6 +4021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114979742652328742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4009,6 +4046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114994441337969436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4022,6 +4060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 5
+  score: 51
 --- !u!114 &114996566162136390
 MonoBehaviour:
   m_ObjectHideFlags: 1

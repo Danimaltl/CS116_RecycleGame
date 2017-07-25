@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114128311445894670}
   m_Layer: 0
   m_Name: bottle
-  m_TagString: recycle
+  m_TagString: Plastic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 2
+  score: 51
 --- !u!212 &212929719725768976
 SpriteRenderer:
   m_ObjectHideFlags: 1

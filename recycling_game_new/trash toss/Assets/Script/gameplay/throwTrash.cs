@@ -6,7 +6,11 @@ public class throwTrash : lerpable
 	public float digestionTime;
 	private int destroyTime = 3;
 
-	private Vector3 lastMousePosition;
+    //DO NOT TOUCH THESE THEY ARE USED FOR BARSCRIPT TO GET THE INFO NECESSARY
+    public static bool correctCollision = false;
+    public static GameObject tagHolder;
+    // You can do whatever to these
+    private Vector3 lastMousePosition;
 	private Vector3 newMousePosition;
 	private Vector2 distance;
 	private Vector3 distance2;
@@ -15,9 +19,10 @@ public class throwTrash : lerpable
 	private bool moveBySwipe;
 	private bool startCounting;
 	private float time;
+    GameObject temp;
 
-	//  Not thrown for now.
-	private GameObject throwingTarget = null; 
+    //  Not thrown for now.
+    private GameObject throwingTarget = null; 
 	//  Pointers to the target objects
 	GameObject compost;
 	GameObject landfill;
@@ -28,8 +33,8 @@ public class throwTrash : lerpable
 	public override void Start()
 	{
 		base.Start();
-		//  Reset these variables every step
-		moveByBelt = true; //  move the object down if true, basically
+        //  Reset these variables every step
+        moveByBelt = true; //  move the object down if true, basically
 		moveBySwipe = false; //  set to true after the finger is released
 		startCounting = false; //  countdown til automatated item destruction when true
 		time = 0; //  presumably the time passed since the counter was activated
@@ -175,28 +180,76 @@ public class throwTrash : lerpable
 
 	//  bin collisions
 	public bool checkForGoal(GameObject other){
-		//  checks for if the current trash scored a point and performs the following logic if so.
-		//  returns true on success
-		if (matchesBin(other)) {
-			difficultySettings.score += 1;
-			difficultySettings.playRecord.Add (gameObject.name.Substring (0, gameObject.name.Length - 7));
-			if (gameObject.tag == "recycle") {
-				difficultySettings.digestionTime_rec = digestionTime;
-			}
-			if (gameObject.tag == "composite") {
-				difficultySettings.digestionTime_com = digestionTime;
-			}
-			Destroy (gameObject);
-			other.GetComponent<bin_controller> ().animateCorrect ();
-			return true;
-		} else {
-			//  Increment penalty
-			difficultySettings.landfillCounter++;
-			//  Destroy in all cases, regardless of success
-			Destroy (gameObject); //  added
-			other.GetComponent<bin_controller> ().animateIncorrect ();
-			return false;
-		}
+        //  checks for if the current trash scored a point and performs the following logic if so.
+        //  returns true on success
+        correctCollision = false;
+        temp = gameObject;
+        //otherwise its recycle and create a temp to store tag
+        if (gameObject.tag == "Plastic" || gameObject.tag == "Paper" ||
+            gameObject.tag == "Metal" || gameObject.tag == "Glass")
+        {
+            temp = (GameObject)Instantiate(gameObject);
+            //print("Before Change  " + gameObject.tag);
+            temp.tag = "recycle";
+            //print("After Change  " + gameObject.tag);
+            //print (temp.tag);
+        }
+        if (matchesBin(other))
+        {
+            difficultySettings.score += 1;
+            difficultySettings.playRecord.Add(gameObject.name.Substring(0, gameObject.name.Length - 7));
+            //if (gameObject.tag == "recycle") {
+            //	difficultySettings.digestionTime_rec = digestionTime;
+            //}
+            if (gameObject.tag == "composite")
+            {
+                print(difficultySettings.score + " Composite");
+                difficultySettings.digestionTime_com = digestionTime;
+                //tagHolder = gameObject;
+                if (!difficultySettings.isTutorial)
+                { 
+                tagHolder = (GameObject)Instantiate(gameObject);
+                }
+                correctCollision = true;
+            }
+            Destroy(gameObject);
+            print(gameObject);
+            print(difficultySettings.score);
+            other.GetComponent<bin_controller>().animateCorrect();
+            return true;
+        }
+        else if (other.tag == temp.tag)
+        {
+            print(difficultySettings.score);
+            difficultySettings.score += 1;
+            difficultySettings.playRecord.Add(gameObject.name.Substring(0, gameObject.name.Length - 7));
+            if (gameObject.tag == "recycle" || temp.tag == "recycle")
+            {
+                difficultySettings.digestionTime_rec = digestionTime;
+                if (!difficultySettings.isTutorial)
+                {
+                    tagHolder = (GameObject)Instantiate(gameObject);
+                }
+                //tagHolder = gameObject;
+                correctCollision = true;
+            }
+            Destroy(gameObject);
+            Destroy(temp);
+            //print(difficultySettings.score + " SCORE");
+            print(other.GetComponent<bin_controller>());
+            other.GetComponent<bin_controller>().animateCorrect();
+            return true;
+        }
+
+        else
+        {
+            //  Increment penalty
+            difficultySettings.landfillCounter++;
+            //  Destroy in all cases, regardless of success
+            Destroy(gameObject); //  added
+            other.GetComponent<bin_controller>().animateIncorrect();
+            return false;
+        }
 	}
 
 

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114892487701897452}
   m_Layer: 0
   m_Name: Trash_BubbleWrap( i )
-  m_TagString: recycle
+  m_TagString: Plastic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   digestionTime: 2
+  score: 51
 --- !u!114 &114892487701897452
 MonoBehaviour:
   m_ObjectHideFlags: 1

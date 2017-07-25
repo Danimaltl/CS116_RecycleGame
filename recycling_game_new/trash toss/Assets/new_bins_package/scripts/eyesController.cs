@@ -24,7 +24,7 @@ public class eyesController : StateMachineBehaviour {
 		//	animator.gameObject != null) 
 		//{
 			bin_controller bin = animator.gameObject.transform.root.GetComponent<bin_controller> ();
-			Debug.Log ("mood: " + bin.getMood () / 11f);
+			//Debug.Log ("mood: " + bin.getMood () / 11f);
 			animator.Play (stateInfo.fullPathHash, -1, bin.getMood () / 11f);
 		//}
 	}
