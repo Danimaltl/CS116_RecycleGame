@@ -133,7 +133,7 @@ public class bin_controller : MonoBehaviour {
 	public void animateCorrect(){
 		//  Animate the bin as if this was the right bin to throw trash into.
 		//  open lid completely
-		lidPosition = 1f;
+		//lidPosition = 1f;
 		setMood(capMood(currentMood +1f)); //  Increase the mood
 		normalizedBreath = 0f;
 		//  And prevent the bin from glitch-flinching
