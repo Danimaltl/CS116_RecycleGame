@@ -27,7 +27,9 @@ public class bin_controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		startedBreathing = Time.time;
+		//  The breath offset avoids a creepy unified breathing effect
+		float breathOffset = Random.value * 5f;
+		startedBreathing = Time.time + breathOffset;
 	}
 	
 	// Update is called once per frame
