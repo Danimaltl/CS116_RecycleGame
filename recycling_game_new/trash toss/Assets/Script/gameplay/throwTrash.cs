@@ -175,7 +175,12 @@ public class throwTrash : lerpable
 	}
 
 	public bool matchesBin(GameObject bin){
-		return bin.tag == gameObject.tag;
+		return bin.tag == gameObject.tag || isRecyclable(this.gameObject) && bin.tag == "recycle";
+	}
+
+	public bool isRecyclable( GameObject trashObject){
+		return  trashObject.tag == "Plastic" || trashObject.tag == "Paper" ||
+				trashObject.tag == "Metal" || trashObject.tag == "Glass";
 	}
 
 	//  bin collisions
@@ -185,8 +190,7 @@ public class throwTrash : lerpable
         correctCollision = false;
         temp = gameObject;
         //otherwise its recycle and create a temp to store tag
-        if (gameObject.tag == "Plastic" || gameObject.tag == "Paper" ||
-            gameObject.tag == "Metal" || gameObject.tag == "Glass")
+		if (isRecyclable(this.gameObject))
         {
             temp = (GameObject)Instantiate(gameObject);
             //print("Before Change  " + gameObject.tag);

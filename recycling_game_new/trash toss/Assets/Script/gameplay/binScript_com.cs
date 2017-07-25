@@ -36,7 +36,7 @@ public class binScript_com : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-		if (coll.gameObject.tag == this.gameObject.tag)
+		if (coll.gameObject.GetComponent<throwTrash>().matchesBin(this.gameObject))
         {
             //animationState.SetInteger("State", 1); //switches idle to eating animation
 			//  If a trash object has the same tag as the bin, allow collision to happen
