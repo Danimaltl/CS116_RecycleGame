@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114991582991511146}
   - component: {fileID: 61013470846436074}
   m_Layer: 0
-  m_Name: compost bin
+  m_Name: composite bin
   m_TagString: composite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
