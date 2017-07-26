@@ -146,7 +146,9 @@ public class throwTrash : lerpable
 		//  so dist2 extracts just direction
 		distance2 = distance / distance.magnitude;
 
-		speed = distance.magnitude/10f;
+		//  speed of the throw proportional to the finger drag distance
+		float minimumSpeed = 7f;
+		speed = Mathf.Max(minimumSpeed, distance.magnitude/10f);
 
 		moveBySwipe = true;
 		startCounting = true;
