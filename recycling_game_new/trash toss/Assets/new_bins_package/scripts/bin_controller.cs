@@ -108,7 +108,6 @@ public class bin_controller : MonoBehaviour {
 		//  Now reset the variable after reading every step
 		//isTouchingBadTrash = false
 		//  Also display the arrow if relevant
-		Debug.Log("FLash arrow timer: " + flashArowTimer);
 		this.gameObject.transform.Find("arrow").gameObject.GetComponent<LineRenderer>().enabled = flashArowTimer > 0;
 
 		

@@ -273,7 +273,7 @@ public class throwTrash : lerpable
 
 	public void flashCorrectBin(){
 		//  Animates the arrow over the bin that the trash belongs to
-		int answerFlashDuration = 50;
+		int answerFlashDuration = 36;
 		if (matchesBin (compost)) {
 			compost.gameObject.GetComponent<bin_controller> ().flashArowTimer = answerFlashDuration;
 		} else if (matchesBin (landfill)) {
