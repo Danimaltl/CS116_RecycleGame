@@ -187,54 +187,51 @@ public class throwTrash : lerpable
 
 	//  bin collisions
 	public bool checkForGoal(GameObject other){
-        //  checks for if the current trash scored a point and performs the following logic if so.
-        //  returns true on success
-        correctCollision = false;
-        temp = gameObject;
-        //otherwise its recycle and create a temp to store tag
-		if (isRecyclable(this.gameObject))
-        {
-            temp = (GameObject)Instantiate(gameObject);
-            //print("Before Change  " + gameObject.tag);
-            temp.tag = "recycle";
-            //print("After Change  " + gameObject.tag);
-            //print (temp.tag);
-        }
-        if (matchesBin(other))
-        {
-            difficultySettings.score += 1;
-            difficultySettings.playRecord.Add(gameObject.name.Substring(0, gameObject.name.Length - 7));
-            //if (gameObject.tag == "recycle") {
-            //	difficultySettings.digestionTime_rec = digestionTime;
-            //}
-            if (gameObject.tag == "composite")
-            {
-                print(difficultySettings.score + " Composite");
-                difficultySettings.digestionTime_com = digestionTime;
-                //tagHolder = gameObject;
-                if (!difficultySettings.isTutorial)
-                { 
-                	tagHolder = (GameObject)Instantiate(gameObject);
-                }
-                correctCollision = true;
-            }
-            else if (gameObject.tag == "recycle" || temp.tag == "recycle")
-            {
-                difficultySettings.digestionTime_rec = digestionTime;
-                if (!difficultySettings.isTutorial)
-                {
-                    tagHolder = (GameObject)Instantiate(gameObject);
-                }
-                //tagHolder = gameObject;
-                correctCollision = true;
-            }
-            Destroy(gameObject);
-            Destroy(temp);
-            print(gameObject);
-            print(difficultySettings.score);
-            other.GetComponent<bin_controller>().animateCorrect();
-            return true;
-        }
+		//  checks for if the current trash scored a point and performs the following logic if so.
+		//  returns true on success
+		correctCollision = false;
+		temp = gameObject;
+
+		// check if this is tutorial and is being used with arrows
+		if (other.tag != "spawnSpot") {
+			
+			//otherwise its recycle and create a temp to store tag
+			if (isRecyclable (this.gameObject)) {
+				temp = (GameObject)Instantiate (gameObject);
+				//print("Before Change  " + gameObject.tag);
+				temp.tag = "recycle";
+				//print("After Change  " + gameObject.tag);
+				//print (temp.tag);
+			}
+			if (matchesBin (other)) {
+				difficultySettings.score += 1;
+				difficultySettings.playRecord.Add (gameObject.name.Substring (0, gameObject.name.Length - 7));
+				//if (gameObject.tag == "recycle") {
+				//	difficultySettings.digestionTime_rec = digestionTime;
+				//}
+				if (gameObject.tag == "composite") {
+					print (difficultySettings.score + " Composite");
+					difficultySettings.digestionTime_com = digestionTime;
+					//tagHolder = gameObject;
+					if (!difficultySettings.isTutorial) { 
+						tagHolder = (GameObject)Instantiate (gameObject);
+					}
+					correctCollision = true;
+				} else if (gameObject.tag == "recycle" || temp.tag == "recycle") {
+					difficultySettings.digestionTime_rec = digestionTime;
+					if (!difficultySettings.isTutorial) {
+						tagHolder = (GameObject)Instantiate (gameObject);
+					}
+					//tagHolder = gameObject;
+					correctCollision = true;
+				}
+				Destroy (gameObject);
+				Destroy (temp);
+				print (gameObject);
+				print (difficultySettings.score);
+				other.GetComponent<bin_controller> ().animateCorrect ();
+				return true;
+			}
        /* else if (other.tag == temp.tag)
         {
             print(difficultySettings.score);
@@ -258,16 +255,18 @@ public class throwTrash : lerpable
             return true;
         }*/
 
-        else
-        {
-            //  Increment penalty
-            difficultySettings.landfillCounter++;
-            //  Destroy in all cases, regardless of success
-            Destroy(gameObject); //  added
-            Destroy(temp);
-            other.GetComponent<bin_controller>().animateIncorrect();
-            return false;
-        }
+        else {
+				//  Increment penalty
+				difficultySettings.landfillCounter++;
+				//  Destroy in all cases, regardless of success
+				Destroy (gameObject); //  added
+				Destroy (temp);
+				other.GetComponent<bin_controller> ().animateIncorrect ();
+				return false;
+			}
+
+		}
+		return false;
 	}
 
 

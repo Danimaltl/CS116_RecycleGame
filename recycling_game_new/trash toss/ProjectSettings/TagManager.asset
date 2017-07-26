@@ -8,6 +8,11 @@ TagManager:
   - landfill
   - composite
   - other
+  - Plastic
+  - Paper
+  - Glass
+  - Metal
+  - spawnSpot
   layers:
   - Default
   - TransparentFX
