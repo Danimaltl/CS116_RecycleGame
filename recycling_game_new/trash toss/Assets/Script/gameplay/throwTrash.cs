@@ -214,7 +214,7 @@ public class throwTrash : lerpable
                 //tagHolder = gameObject;
                 if (!difficultySettings.isTutorial)
                 { 
-                tagHolder = (GameObject)Instantiate(gameObject);
+                	tagHolder = (GameObject)Instantiate(gameObject);
                 }
                 correctCollision = true;
             }
