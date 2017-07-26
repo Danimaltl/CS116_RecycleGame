@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\animationStart.cs" />
-     <Compile Include="Assets\Script\binScript_tutorArrows.cs" />
      <Compile Include="Assets\Script\difficultySettings.cs" />
      <Compile Include="Assets\Script\display\goalDisplay.cs" />
      <Compile Include="Assets\Script\display\itemCategory.cs" />

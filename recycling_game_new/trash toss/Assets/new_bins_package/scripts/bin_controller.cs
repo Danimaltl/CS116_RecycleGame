@@ -19,6 +19,7 @@ public class bin_controller : MonoBehaviour {
 
 	public int flinchlength = 10;
 	private int badTrashTimer = -1;
+	public int flashArowTimer = -1;
 	public bool anticipatingBad = false;
 	public bool anticipatingGood = false;
 	private float startedBreathing;
@@ -36,6 +37,7 @@ public class bin_controller : MonoBehaviour {
 	void Update () {
 		//  This counter always runs down
 		badTrashTimer -= 1;
+		flashArowTimer -= 1;
 		//  Make sure the mood is a legal mood, to be safe
 		currentMood = capMood (currentMood);
 
@@ -104,7 +106,12 @@ public class bin_controller : MonoBehaviour {
 			this.gameObject.transform.GetChild(1).GetComponent<Renderer>().enabled = false;
 		}
 		//  Now reset the variable after reading every step
-		//isTouchingBadTrash = false;
+		//isTouchingBadTrash = false
+		//  Also display the arrow if relevant
+		Debug.Log("FLash arrow timer: " + flashArowTimer);
+		this.gameObject.transform.Find("arrow").gameObject.GetComponent<LineRenderer>().enabled = flashArowTimer > 0;
+
+		
 	}
 
 	public int capMood( float rawMood ){

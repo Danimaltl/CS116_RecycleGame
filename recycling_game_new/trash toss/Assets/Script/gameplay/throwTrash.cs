@@ -258,6 +258,8 @@ public class throwTrash : lerpable
         else {
 				//  Increment penalty
 				difficultySettings.landfillCounter++;
+				//  Give feedback for the correct bin
+				flashCorrectBin ();
 				//  Destroy in all cases, regardless of success
 				Destroy (gameObject); //  added
 				Destroy (temp);
@@ -267,6 +269,20 @@ public class throwTrash : lerpable
 
 		}
 		return false;
+	}
+
+	public void flashCorrectBin(){
+		//  Animates the arrow over the bin that the trash belongs to
+		int answerFlashDuration = 50;
+		if (matchesBin (compost)) {
+			compost.gameObject.GetComponent<bin_controller> ().flashArowTimer = answerFlashDuration;
+		} else if (matchesBin (landfill)) {
+			landfill.gameObject.GetComponent<bin_controller> ().flashArowTimer = answerFlashDuration;
+		} else if (matchesBin (recycle)) {
+			recycle.gameObject.GetComponent<bin_controller> ().flashArowTimer = answerFlashDuration;
+		} else if (matchesBin (otherBin)) {
+			otherBin.gameObject.GetComponent<bin_controller> ().flashArowTimer = answerFlashDuration;
+		}
 	}
 
 
