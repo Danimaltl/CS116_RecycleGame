@@ -40,6 +40,10 @@ public class binScript_feedback : MonoBehaviour {
 			audioSource.clip = reject; // set clip to "incorrect" sound
 		}
 		audioSource.Stop();
-		audioSource.Play();
+		//  Added following line that fixes a bug where the last throw triggers an infinite sound loop on win screen.
+		//  This says if the game is not over, play the sound
+		if (!difficultySettings.gameOvered) {
+			audioSource.Play ();
+		}
 	}
 }
