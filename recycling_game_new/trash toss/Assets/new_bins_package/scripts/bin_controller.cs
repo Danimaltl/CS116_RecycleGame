@@ -108,7 +108,9 @@ public class bin_controller : MonoBehaviour {
 		//  Now reset the variable after reading every step
 		//isTouchingBadTrash = false
 		//  Also display the arrow if relevant
-		this.gameObject.transform.Find("arrow").gameObject.GetComponent<LineRenderer>().enabled = flashArowTimer > 0;
+		//if (difficultySettings.isTutorial) {
+		this.gameObject.transform.Find ("arrow").gameObject.GetComponent<LineRenderer> ().enabled = flashArowTimer > 0;
+		//}
 
 		
 	}

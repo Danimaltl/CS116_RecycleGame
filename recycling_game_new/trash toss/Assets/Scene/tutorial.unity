@@ -199,6 +199,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 120532362843063576, guid: 855c3d75d394dbb4298cc6d3118a4265,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key0.rgba
+      value: 4283558524
+      objectReference: {fileID: 0}
+    - target: {fileID: 120532362843063576, guid: 855c3d75d394dbb4298cc6d3118a4265,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.rgba
+      value: 4283558524
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 855c3d75d394dbb4298cc6d3118a4265, type: 2}
   m_IsPrefabParent: 0
@@ -784,22 +794,22 @@ LineRenderer:
     colorGradient:
       key0:
         serializedVersion: 2
-        rgba: 4284809215
+        rgba: 4291499638
       key1:
         serializedVersion: 2
-        rgba: 4284809215
+        rgba: 4291499638
       key2:
         serializedVersion: 2
-        rgba: 4278190080
+        rgba: 4294951546
       key3:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16761466
       key4:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16777215
       key5:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16777215
       key6:
         serializedVersion: 2
         rgba: 0
@@ -808,10 +818,10 @@ LineRenderer:
         rgba: 0
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
+      ctime2: 65535
+      ctime3: 65535
+      ctime4: 65535
+      ctime5: 65535
       ctime6: 0
       ctime7: 0
       atime0: 0
@@ -822,7 +832,7 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 1
+      m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 5
@@ -1563,22 +1573,22 @@ LineRenderer:
     colorGradient:
       key0:
         serializedVersion: 2
-        rgba: 4284809215
+        rgba: 4291499638
       key1:
         serializedVersion: 2
-        rgba: 4284809215
+        rgba: 4291499638
       key2:
         serializedVersion: 2
-        rgba: 4278190080
+        rgba: 4294951546
       key3:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16761466
       key4:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16777215
       key5:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16777215
       key6:
         serializedVersion: 2
         rgba: 0
@@ -1587,10 +1597,10 @@ LineRenderer:
         rgba: 0
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
+      ctime2: 65535
+      ctime3: 65535
+      ctime4: 65535
+      ctime5: 65535
       ctime6: 0
       ctime7: 0
       atime0: 0
@@ -1601,7 +1611,7 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 1
+      m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 5
@@ -3432,22 +3442,22 @@ LineRenderer:
     colorGradient:
       key0:
         serializedVersion: 2
-        rgba: 4284809215
+        rgba: 4291499638
       key1:
         serializedVersion: 2
-        rgba: 4284809215
+        rgba: 4291499638
       key2:
         serializedVersion: 2
-        rgba: 4278190080
+        rgba: 4294951546
       key3:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16761466
       key4:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16777215
       key5:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16777215
       key6:
         serializedVersion: 2
         rgba: 0
@@ -3456,10 +3466,10 @@ LineRenderer:
         rgba: 0
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
+      ctime2: 65535
+      ctime3: 65535
+      ctime4: 65535
+      ctime5: 65535
       ctime6: 0
       ctime7: 0
       atime0: 0
@@ -3470,7 +3480,7 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 1
+      m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 5
@@ -4664,6 +4674,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 120049366276502484, guid: 5c353896490d693448733d03d3e8f9c3,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key0.rgba
+      value: 4283558524
+      objectReference: {fileID: 0}
+    - target: {fileID: 120049366276502484, guid: 5c353896490d693448733d03d3e8f9c3,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.rgba
+      value: 4283558524
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c353896490d693448733d03d3e8f9c3, type: 2}
   m_IsPrefabParent: 0
@@ -4967,22 +4987,22 @@ LineRenderer:
     colorGradient:
       key0:
         serializedVersion: 2
-        rgba: 4284809215
+        rgba: 4291499638
       key1:
         serializedVersion: 2
-        rgba: 4284809215
+        rgba: 4291499638
       key2:
         serializedVersion: 2
-        rgba: 4278190080
+        rgba: 4294951546
       key3:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16761466
       key4:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16777215
       key5:
         serializedVersion: 2
-        rgba: 0
+        rgba: 16777215
       key6:
         serializedVersion: 2
         rgba: 0
@@ -4991,10 +5011,10 @@ LineRenderer:
         rgba: 0
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
+      ctime2: 65535
+      ctime3: 65535
+      ctime4: 65535
+      ctime5: 65535
       ctime6: 0
       ctime7: 0
       atime0: 0
@@ -5005,7 +5025,7 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 1
+      m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 5
@@ -5371,6 +5391,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 120283232669046966, guid: 09611699904d40e469be4e1841d673f0,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key0.rgba
+      value: 4283558524
+      objectReference: {fileID: 0}
+    - target: {fileID: 120283232669046966, guid: 09611699904d40e469be4e1841d673f0,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.rgba
+      value: 4283558524
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09611699904d40e469be4e1841d673f0, type: 2}
   m_IsPrefabParent: 0
@@ -5412,6 +5442,16 @@ Prefab:
     - target: {fileID: 4518617502530224, guid: f34170924ea597d40b7371f5f7f7bc52, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 120917105225378922, guid: f34170924ea597d40b7371f5f7f7bc52,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key0.rgba
+      value: 4283558524
+      objectReference: {fileID: 0}
+    - target: {fileID: 120917105225378922, guid: f34170924ea597d40b7371f5f7f7bc52,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.rgba
+      value: 4283558524
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f34170924ea597d40b7371f5f7f7bc52, type: 2}
