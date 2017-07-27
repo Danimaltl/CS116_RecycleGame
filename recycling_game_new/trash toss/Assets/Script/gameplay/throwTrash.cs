@@ -71,7 +71,6 @@ public class throwTrash : lerpable
 			}
 		} else if (moveBySwipe) {
 			//  The buffer is the drag distance that is tolerated before anything happens
-			Debug.Log(distance);
 			float distanceBuffer = 0.2f;
 			float horizontalSensitivity = 0.2f;
 			//  Presumably distance2 contains the direction of the swipe, 
@@ -238,8 +237,8 @@ public class throwTrash : lerpable
 				}
 				Destroy (gameObject);
 				Destroy (temp);
-				print (gameObject);
-				print (difficultySettings.score);
+				//print (gameObject);
+				//print (difficultySettings.score);
 				other.GetComponent<bin_controller> ().animateCorrect ();
 				return true;
 			}
