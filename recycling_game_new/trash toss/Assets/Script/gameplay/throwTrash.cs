@@ -71,12 +71,22 @@ public class throwTrash : lerpable
 			}
 		} else if (moveBySwipe) {
 			//  The buffer is the drag distance that is tolerated before anything happens
+			Debug.Log(distance);
 			float distanceBuffer = 0.2f;
 			float horizontalSensitivity = 0.2f;
 			//  Presumably distance2 contains the direction of the swipe, 
 			//  and the decimal controls the speed.
 			//transform.Translate (distance2 * .1f);
+			GameObject closestBin = raycastForBin(this.gameObject.transform.position, distance2.normalized);
+			if (closestBin != null) {
+				throwAt (closestBin);
+			} else {
+				//  Neither swiped up nor down. Do neither
+				moveByBelt = true;
+				moveBySwipe = false;
+			}
 			//  Convert the drag vector into a discrete direction
+			/*
 			if (Mathf.Abs (distance2.x) > horizontalSensitivity) {
 				//  horizontal > vertical
 				if (distance2.x > distanceBuffer) {
@@ -100,6 +110,7 @@ public class throwTrash : lerpable
 					moveBySwipe = false;
 				}
 			}
+			*/
 
 		} else if (moveByBelt) {
 			//  Literally move the item downward if it is on the belt
@@ -285,5 +296,41 @@ public class throwTrash : lerpable
 		}
 	}
 
+	public GameObject raycastForBin(Vector3 origin, Vector3 direction){
+		//  Return the closest bin to any point in the line provided
+		GameObject closestBin = null;
+		float closestDistanceToCheckpoint = 99999;
+
+		int rayIncrement = 3;
+		for (int rayDistance = 0; rayDistance < 100; rayDistance += rayIncrement){
+			Vector3 pointToCheck = origin + direction * rayDistance; //  Travel incrementally along this direction as loop continues
+			//  Go through all the bins and find the closest one to this point
+			float distanceFromBinToRayPoint = Vector3.Distance(recycle.gameObject.transform.position , pointToCheck);
+			if (distanceFromBinToRayPoint < closestDistanceToCheckpoint) {
+				//  New record found
+				closestBin = recycle;
+				closestDistanceToCheckpoint = distanceFromBinToRayPoint;
+			}
+			distanceFromBinToRayPoint =  Vector3.Distance(compost.gameObject.transform.position , pointToCheck);
+			if (distanceFromBinToRayPoint < closestDistanceToCheckpoint) {
+				//  New record found
+				closestBin = compost;
+				closestDistanceToCheckpoint = distanceFromBinToRayPoint;
+			}
+			distanceFromBinToRayPoint =  Vector3.Distance(landfill.gameObject.transform.position , pointToCheck);
+			if (distanceFromBinToRayPoint < closestDistanceToCheckpoint) {
+				//  New record found
+				closestBin = landfill;
+				closestDistanceToCheckpoint = distanceFromBinToRayPoint;
+			}
+			distanceFromBinToRayPoint =  Vector3.Distance(otherBin.gameObject.transform.position , pointToCheck);
+			if (distanceFromBinToRayPoint < closestDistanceToCheckpoint) {
+				//  New record found
+				closestBin = otherBin;
+				closestDistanceToCheckpoint = distanceFromBinToRayPoint;
+			}
+		}
+		return closestBin;
+	}
 
 }
