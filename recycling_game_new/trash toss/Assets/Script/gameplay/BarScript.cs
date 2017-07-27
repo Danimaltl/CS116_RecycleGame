@@ -25,7 +25,7 @@ public class BarScript :MonoBehaviour {
             content.fillAmount -= Time.deltaTime* difficultySettings.barDropRate;
 			if (score != difficultySettings.score)
             {
-                if (throwTrash.correctCollision == true)
+				if (throwTrash.correctCollision == true && throwTrash.tagHolder != null)
                 {
                     //print(" IT WORKED YOUR TAG IS: " + throwTrash.tagHolder.tag);
                     barFill(throwTrash.tagHolder.tag);
