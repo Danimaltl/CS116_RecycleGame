@@ -16,7 +16,8 @@ Using Unity with git: http://www.gamasutra.com/blogs/TimPettersen/20161206/28698
 Must merge scene files manually.
 
 Todo:
- + Add additional game feel for throwing trash into bins.
  + Change "story mode" to "Curbside" and "endless mode" to "Recycling Center"
  + Create additional assets to fit the theme
  + Refine and balance systems to better educate about recycling.
+
+Summer '17 Google Drive: https://drive.google.com/drive/folders/0B2K7Wm7Fic2Qd1htWnEwa2hFZkk?usp=sharing
