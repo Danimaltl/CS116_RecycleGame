@@ -1,7 +1,6 @@
-# CS116_RecycleGame
-Recycling Game Project for CS 116 class (Trash Toss)
+# Trash Toss Recycling Game
 
-July 2017
+A gaming app project implemented by Computer Science 115/116/117 students in collaboration with the IDEASS program.
 
 Must use Unity 5.5.2p4, conveyor belt flickers otherwise. Different animation system might fix.
 https://unity3d.com/unity/qa/patch-releases/5.5.2p4
@@ -12,14 +11,14 @@ File -> Build Settings -> Android
 
 https://stackoverflow.com/questions/26016770/how-to-install-old-version-of-android-build-tools-from-command-line
 
-Using Unity with git: http://www.gamasutra.com/blogs/TimPettersen/20161206/286981/The_complete_guide_to_Unity__Git.php
+Using Unity with Git does not work well at all. Instead, use Unity Collab - version control that is included directly in Unity. Multiple people can collaborate on code and push to the master branch. Only downside is that you cannot go back to a previous state of the project after commiting. So make sure there are no bugs in the code before you add your changes to Unity Collab.
 
-Must merge scene files manually.
+
 
 Todo:
- + Change "story mode" to "Curbside" and "endless mode" to "Recycling Center"
- + Create additional assets to fit the theme
+ + Change "story mode" to "Curbside Tutorial" and "endless mode" to "Recycling Center"
  + Refine and balance systems to better educate about recycling.
- + Look into Unity cloud build: https://unity3d.com/learn/tutorials/topics/cloud-build/creating-your-first-source-control-repository
  
 Summer '17 Google Drive: https://drive.google.com/drive/folders/0B2K7Wm7Fic2Qd1htWnEwa2hFZkk?usp=sharing
+
+Fall '17 Google Drive: https://drive.google.com/drive/folders/0B5OYtSk2r_49UWdHUTRaY2gtVFU?usp=sharing
